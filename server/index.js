@@ -26,3 +26,6 @@ mongoose.connect(process.env.MONGODB_URL).then(() => {
     console.log({ error });
     process.exit(1);
 })
+
+
+
