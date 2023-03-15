@@ -32,6 +32,22 @@ const unauthorize = (res) => {
         message: "UnAuthorize",
     });
 };
+// NotFound
+const notFound = (res) => {
+    responseWithData(res, 404, {
+        status: 404,
+        message: "ReSource not Found!",
+    });
+};
+
+export default {
+    error,
+    badRequest,
+    ok,
+    created,
+    notFound,
+    unauthorize
+};
 
 
 
