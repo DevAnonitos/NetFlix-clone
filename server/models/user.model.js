@@ -22,10 +22,10 @@ const UserSchema = new mongoose.Schema({
         required: true,
         select: false,
     }
-}, model);
+}, modelOptions);
 
-UserSchema.methods.setPassword = (password) => {
-    this.salt = crypto.randomBytes(16).toString("hex")
+UserSchema.methods.setPassword = function (password) {
+    this.salt = crypto.randomBytes(16).toString("hex");
 
     this.password = crypto.pbkdf2Sync(
         password,
@@ -34,9 +34,9 @@ UserSchema.methods.setPassword = (password) => {
         64,
         "sha512"
     ).toString("hex");
-}
+};
 
-UserSchema.methods.validPassword = (password) => {
+UserSchema.methods.validPassword = function (password)  {
     const hash = crypto.pbkdf2Sync(
         password,
         this.salt,
@@ -46,7 +46,7 @@ UserSchema.methods.validPassword = (password) => {
     ).toString("hex");
 
     return this.password === hash;
-}
+};
 
 const userModel = mongoose.model("User", UserSchema);
 
