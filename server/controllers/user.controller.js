@@ -2,6 +2,7 @@ import userModel from "../models/user.model.js";
 import  jsonwebToken from "jsonwebtoken";
 import responseHandler from "../handlers/response.handler.js";
 
+// SignUp Controller
 const signUp = async (req, res) => {
     try {
         const { username, password, displayName } = req.body;
@@ -37,7 +38,7 @@ const signUp = async (req, res) => {
         console.log(error);
     };
 };
-
+// SignIn Controller
 const signIn  = async (req, res) => {
     try {
         const { username, password } = req.body;
@@ -69,4 +70,43 @@ const signIn  = async (req, res) => {
         console.log(error);
     }
 };
+// Update PassWord Controller
+const updatePassword = async (req, res) => {
+    try {
+        const { password, newPassword } =  req.body;
 
+        const user = await userModel.findById(req.user.id).select("Password is salt");
+
+        if(!user)
+            return responseHandler.unauthorize(res);
+
+        if(!user.validPassword(password))
+            return responseHandler.badRequest(res, "Wrong Password");
+
+        user.setPassword(newPassword);
+
+        await user.save();
+
+        responseHandler.ok(res);
+
+    } catch (error) {
+        responseHandler.error(res);
+        console.log(error);
+    }
+};
+// Get info Controller
+const getInfo = async (req, res) => {
+    try {
+        const user = await userModel.findById(req.user.id);
+
+        if(!user) return responseHandler.notFound(res);
+
+        responseHandler.ok(res, user);
+
+    } catch (error) {
+        responseHandler.error(res);
+        console.log(error);
+    }
+};
+
+export default { signIn, signUp, getInfo, updatePassword};
