@@ -20,6 +20,7 @@ const personMedias = async (req, res) => {
         responseHandler.ok(res, medias);
     } catch (error) {
         responseHandler.error(res);
+        console.log(error);
     }
 };
 

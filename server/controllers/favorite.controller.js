@@ -30,7 +30,7 @@ const removeFavorite = async (req, res) => {
     try {
         const { favoriteId } = req.params;
 
-        const favorite = await favoriteModel.findOneAndRemove({
+        const favorite = await favoriteModel.findOne({
             user: req.user.id,
             _id: favoriteId,
         });
