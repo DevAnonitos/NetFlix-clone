@@ -1,12 +1,12 @@
-import { validatorResult } from "express-validator "
+import { validationResult } from "express-validator";
 
 const validate = (req, res, next) => {
-    const errors = validatorResult(req);
+    const errors = validationResult(req);
 
-    if(!errors.isEmpty())
-        return res.status(400).json(errors.array()[0].msg);
+    if (!errors.isEmpty()) return res.status(400).json({
+        message: errors.array()[0].msg
+    });
 
-    res.setHeader('X-Status-Code', res.statusCode);
     next();
 };
 
