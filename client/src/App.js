@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 
 const App = () => {
   return (
-    <div>App</div>
+    <>
+      App
+    </>
   );
 };
 
