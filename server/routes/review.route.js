@@ -36,4 +36,6 @@ router.delete(
     "/:reviewId",
     tokkenMiddleware.auth,
     reviewController.remove,
-)
+);
+
+export default router;
