@@ -1,4 +1,4 @@
-import privateClient from "../client/public.client.js";
+import privateClient from "../client/public.client";
 
 const reviewEndpoints = {
     list: "review",
