@@ -4,6 +4,7 @@ import themeConfigs from './configs/theme.configs';
 import  CssBaseline  from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import MainLayout from "./components/layout/MainLayout";
 
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
@@ -33,6 +34,17 @@ const App = () => {
         />
         {/* --------------------MUI CSS baseline--------------------- */}
         <CssBaseline />
+
+        {/* --------------------AppRouter---------------------------- */}
+        <BrowserRouter>
+          <Routes>
+            <Route
+              path='/' element={<MainLayout />}
+            >
+
+            </Route>
+          </Routes>
+        </BrowserRouter>
       </ThemeProvider>
     </>
   );
