@@ -1,19 +1,25 @@
 import React from 'react';
 import { Outlet } from "react-router-dom";
 import { Box } from "@mui/material";
-import { GlobalLoading, AuthModal, TopBar } from '../common';
+import { GlobalLoading, AuthModal, TopBar, Footer } from '../common';
 
 const MainLayout = () => {
     return (
         <>
-            {/*--------- GlobalLoading------------ */}
-            {/* <GlobalLoading /> */}
-            {/* ---------LoginModal--------------- */}
-            {/* <AuthModal /> */}
+            {/* global loading */}
+            <GlobalLoading />
+            {/* global loading */}
+
+            {/* login modal */}
+            <AuthModal />
+            {/* login modal */}
+
             <Box display="flex" minHeight="100vh">
-                {/*-------- Header---------- */}
+                {/* header */}
                 <TopBar />
-                {/* --------Main------------ */}
+                {/* header */}
+
+                {/* main */}
                 <Box
                     component="main"
                     flexGrow={1}
@@ -22,7 +28,12 @@ const MainLayout = () => {
                 >
                     <Outlet />
                 </Box>
+                {/* main */}
             </Box>
+
+            {/* footer */}
+            <Footer />
+            {/* footer */}
         </>
     );
 };
