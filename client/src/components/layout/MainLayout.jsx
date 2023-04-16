@@ -6,20 +6,14 @@ import { GlobalLoading, AuthModal, TopBar, Footer } from '../common';
 const MainLayout = () => {
     return (
         <>
-            {/* global loading */}
+            {/*--------- GlobalLoading------------ */}
             <GlobalLoading />
-            {/* global loading */}
-
-            {/* login modal */}
+            {/* ---------LoginModal--------------- */}
             <AuthModal />
-            {/* login modal */}
-
             <Box display="flex" minHeight="100vh">
-                {/* header */}
+                {/*-------- Header---------- */}
                 <TopBar />
-                {/* header */}
-
-                {/* main */}
+                {/* --------Main------------ */}
                 <Box
                     component="main"
                     flexGrow={1}
@@ -28,12 +22,10 @@ const MainLayout = () => {
                 >
                     <Outlet />
                 </Box>
-                {/* main */}
             </Box>
 
-            {/* footer */}
+            {/*------------------- Footer--------------- */}
             <Footer />
-            {/* footer */}
         </>
     );
 };
