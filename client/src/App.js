@@ -4,6 +4,8 @@ import themeConfigs from './configs/theme.configs';
 import  CssBaseline  from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { PageWrapper } from './components/common';
+import routes from "./routes/routes";
 
 import ClipLoader from "react-spinners/ClipLoader";
 import { ToastContainer } from "react-toastify";
@@ -76,7 +78,33 @@ const App = () => {
                 </>
               }
             >
-
+              {routes.map((route, index) => (
+                route.index ? (
+                  <Route
+                    index
+                    key={index}
+                    element={route.state ? (
+                      <PageWrapper
+                        state={route.state}
+                      >
+                        {route.element}
+                      </PageWrapper>
+                    ) : route.element}
+                  />
+                ) : (
+                  <Route
+                    path={route.path}
+                    key={index}
+                    element={route.state ? (
+                      <PageWrapper
+                        state={route.state}
+                      >
+                        {route.element}
+                      </PageWrapper>
+                    ) : route.element}
+                  />
+                )
+              ))}
             </Route>
           </Routes>
         </BrowserRouter>
