@@ -7,7 +7,7 @@ const GlobalLoading = () => {
 
     const { globalLoading } = useSelector((state) => state.globalLoading);
 
-    const [isLoading, setLoading] = useState(false);
+    const [isLoading, setLoading] = useState(true);
 
     useEffect(() => {
         if(globalLoading) {
@@ -33,7 +33,7 @@ const GlobalLoading = () => {
                 }}
             >
                 <Toolbar />
-                <LinearProgress />
+                <LinearProgress color="success" />
                 <Box
                     sx={{
                         position: "absolute",
