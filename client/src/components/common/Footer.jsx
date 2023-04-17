@@ -8,6 +8,8 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 const Footer = () => {
     return (
@@ -56,32 +58,47 @@ const Footer = () => {
                             <Box
                                 sx={{
                                     marginTop: "1rem",
+                                    cursor: "pointer",
                                 }}
                             >
                                 <FacebookIcon
                                     sx={{
-                                        color: "#1877F2",
-                                        fontSize: "2rem",
+                                        color: "#fff",
+                                        fontSize: "1.8rem",
                                         marginRight: "1rem",
                                     }}
                                 />
                                 <TwitterIcon
                                     sx={{
-                                        color: "#48dbfb",
-                                        fontSize: "2rem",
+                                        color: "#fff",
+                                        fontSize: "1.8rem",
                                         marginRight: "1rem"
                                     }}
                                 />
                                 <GitHubIcon
                                     sx={{
-                                        fontSize: "2rem",
+                                        fontSize: "1.8rem",
                                         marginRight: "1rem",
                                     }}
                                 />
                                 <InstagramIcon
                                     sx={{
-                                        color: "#FC427B",
-                                        fontSize: "2rem",
+                                        color: "#fff",
+                                        fontSize: "1.8rem",
+                                        marginRight: "1rem",
+                                    }}
+                                />
+                                <YouTubeIcon
+                                    sx={{
+                                        color: "#fff",
+                                        fontSize: "1.8rem",
+                                        marginRight: "1rem",
+                                    }}
+                                />
+                                <WhatsAppIcon
+                                    sx={{
+                                        color: "#fff",
+                                        fontSize: "1.8rem",
                                         marginRight: "1rem",
                                     }}
                                 />
