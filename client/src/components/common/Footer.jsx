@@ -4,6 +4,10 @@ import Container from './Container';
 import Logo from './Logo';
 import { Paper, Stack, Button, Box, Typography } from '@mui/material';
 import menuConfigs from "../../configs/menu.configs";
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 const Footer = () => {
     return (
@@ -34,15 +38,54 @@ const Footer = () => {
                         </Box>
                         <Box>
                             <Typography variant="body2" color="text.secondary">
-                                Thiết kế và phát triển bởi 🕵️‍♂️
-                                <span className='font-semibold text-[#f44336]'>Nguyễn Bảo</span>
+                                Design by 🕵️‍♂️
+                                <span
+                                    className='font-semibold text-[#61dafb]
+                                    text-lg'
+                                >
+                                    <a
+                                        href="https://www.facebook.com/baonguyenno1412/"
+                                    >
+                                        Nguyễn Bảo
+                                    </a>
+                                </span>
                             </Typography>
                             <Typography variant="body2" color="text.secondary">
-                                Copyright © 2022 - 2023 All rights reserved
+                                Copyright © 2023 All rights reserved
                             </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                                Cập nhật lần cuối: 02:24:30, 17/4/2023
-                            </Typography>
+                            <Box
+                                sx={{
+                                    marginTop: "1rem",
+                                }}
+                            >
+                                <FacebookIcon
+                                    sx={{
+                                        color: "#1877F2",
+                                        fontSize: "2rem",
+                                        marginRight: "1rem",
+                                    }}
+                                />
+                                <TwitterIcon
+                                    sx={{
+                                        color: "#48dbfb",
+                                        fontSize: "2rem",
+                                        marginRight: "1rem"
+                                    }}
+                                />
+                                <GitHubIcon
+                                    sx={{
+                                        fontSize: "2rem",
+                                        marginRight: "1rem",
+                                    }}
+                                />
+                                <InstagramIcon
+                                    sx={{
+                                        color: "#FC427B",
+                                        fontSize: "2rem",
+                                        marginRight: "1rem",
+                                    }}
+                                />
+                            </Box>
                         </Box>
                     </Stack>
                 </Paper>
