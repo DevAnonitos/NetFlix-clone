@@ -23,7 +23,7 @@ const themeConfigs = {
             }
         } : {
             primary: {
-                main: " #61dafb"
+                main: "#61dafb"
             },
             secondary: {
                 main: "#17a2b8"

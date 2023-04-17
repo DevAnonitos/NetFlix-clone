@@ -8,7 +8,7 @@ const Container = ({ header, children }) => {
                 sx={{
                     marginTop: "5rem",
                     marginX: "auto",
-                    color: "text.primary"
+                    color: "text.primary",
                 }}
             >
                 <Stack spacing={4}>

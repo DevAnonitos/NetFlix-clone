@@ -6,7 +6,7 @@ const Logo = () => {
     return (
         <>
             <Typography fontWeight="700" fontSize="1.7rem">
-                MovieNet<span className='text-green-500'>Flix</span>
+                MovieNet<span className='text-emerald-500'>Flix</span>
             </Typography>
         </>
     );
