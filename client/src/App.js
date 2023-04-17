@@ -41,7 +41,12 @@ const App = () => {
   return (
     <>
       <ThemeProvider
-        theme={themeConfigs.custom({ mode: themeMode })}
+        theme={{
+          ...themeConfigs.custom({ mode: themeMode }),
+          typography: {
+            fontFamily: ['Poppins', 'sans-serif'].join(','),
+          },
+        }}
       >
         {/*--------------------Config Toast React-------------------- */}
         <ToastContainer
