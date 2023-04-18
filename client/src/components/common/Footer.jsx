@@ -10,6 +10,8 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import TelegramIcon from '@mui/icons-material/Telegram';
+
 
 const Footer = () => {
     return (
@@ -81,6 +83,13 @@ const Footer = () => {
                                         marginRight: "1rem",
                                     }}
                                 />
+                                <WhatsAppIcon
+                                    sx={{
+                                        color: "#fff",
+                                        fontSize: "1.8rem",
+                                        marginRight: "1rem",
+                                    }}
+                                />
                                 <InstagramIcon
                                     sx={{
                                         color: "#fff",
@@ -95,7 +104,7 @@ const Footer = () => {
                                         marginRight: "1rem",
                                     }}
                                 />
-                                <WhatsAppIcon
+                                <TelegramIcon
                                     sx={{
                                         color: "#fff",
                                         fontSize: "1.8rem",
