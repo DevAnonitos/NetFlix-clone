@@ -61,9 +61,34 @@ const TopBar = () => {
                     elevation={0}
                     sx={{
                         zIndex: 9999,
+                        backgroundColor: "#282c34",
                     }}
                 >
+                    <Toolbar
+                        sx={{
+                            alignItems: "center",
+                            justifyContent: "space-between",
+                            backgroundColor: "#282c34",
+                        }}
+                    >
+                        <Stack
+                            direction="row"
+                            spacing={1}
+                            alignItems="center"
+                        >
+                            <Button
+                                color="inherit"
+                                sx={{ mr: 2, display: { md: "none" } }}
+                                onClick={toggleSidebar}
+                            >
+                                <MenuIcon />
+                            </Button>
 
+                            <Box>
+                                <Logo />
+                            </Box>
+                        </Stack>
+                    </Toolbar>
                 </AppBar>
             </ScrollAppBar>
         </>
