@@ -5,7 +5,7 @@ import Logo from './Logo';
 import UserMenu from './UserMenu';
 import Sidebar from './Sidebar';
 import menuConfigs from '../../configs/menu.configs';
-import { themeMode } from "../../configs/theme.configs";
+import { themeModes } from "../../configs/theme.configs";
 import { setThemeMode  } from "../../redux/features/themeModeSlice";
 import { setAuthModalOpen } from '../../redux/features/authModalSlice';
 import {
@@ -47,7 +47,7 @@ const TopBar = () => {
     const dispatch = useDispatch();
 
     const onSwitchTheme = () => {
-        const theme = themeMode === themeMode.dark ? themeMode.light : themeMode.dark;
+        const theme = themeMode === themeModes.dark ? themeModes.light : themeModes.dark;
         dispatch(setThemeMode(theme));
     };
 
@@ -61,14 +61,12 @@ const TopBar = () => {
                     elevation={0}
                     sx={{
                         zIndex: 9999,
-                        backgroundColor: "#282c34",
                     }}
                 >
                     <Toolbar
                         sx={{
                             alignItems: "center",
                             justifyContent: "space-between",
-                            backgroundColor: "#282c34",
                         }}
                     >
                         <Stack
@@ -84,10 +82,67 @@ const TopBar = () => {
                                 <MenuIcon />
                             </Button>
 
-                            <Box>
+                            <Box
+                                sx={
+                                    { display: { xs: "inline-block", md: "none" } }
+                                }
+                            >
                                 <Logo />
                             </Box>
                         </Stack>
+
+                        <Box
+                            flexGrow={1}
+                            alignItems="center"
+                            display={{ xs: "none", md: "flex" }}
+                        >
+                            <Box
+                                sx={
+                                    {
+                                        marginRight: "30px",
+                                    }
+                                }
+                            >
+                                <Logo />
+                            </Box>
+                            {menuConfigs.main.map((item, index) => (
+                                <Button
+                                    tabIndex={index}
+                                    key={index}
+                                    sx={{
+                                        color: appState.includes(item.state)
+                                            ? "primary.contrastText"
+                                            : "inherit",
+                                        mr: 2,
+                                        backgroundColor: appState.includes(item.state)
+                                            ? "secondary.main"
+                                            : "inherit",
+                                    }}
+                                    component={Link}
+                                    to={item.path}
+                                    variant={
+                                        appState.includes(item.state)
+                                            ? "contained"
+                                            : "text"
+                                    }
+                                >
+                                    {item.display}
+                                </Button>
+                            ))}
+                            <Button
+                                sx={{
+                                    color: "inherit",
+                                }}
+                                onClick={onSwitchTheme}
+                            >
+                                {themeMode === themeModes.dark &&
+                                    <DarkModeOutlinedIcon />
+                                }
+                                {themeMode === themeModes.light &&
+                                    <WbSunnyOutlinedIcon />
+                                }
+                            </Button>
+                        </Box>
                     </Toolbar>
                 </AppBar>
             </ScrollAppBar>

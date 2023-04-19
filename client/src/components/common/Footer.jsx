@@ -65,14 +65,14 @@ const Footer = () => {
                             >
                                 <FacebookIcon
                                     sx={{
-                                        color: "#fff",
+                                        color: "#1877f2",
                                         fontSize: "1.8rem",
                                         marginRight: "1rem",
                                     }}
                                 />
                                 <TwitterIcon
                                     sx={{
-                                        color: "#fff",
+                                        color: "#1da1f2 ",
                                         fontSize: "1.8rem",
                                         marginRight: "1rem"
                                     }}
@@ -85,28 +85,28 @@ const Footer = () => {
                                 />
                                 <WhatsAppIcon
                                     sx={{
-                                        color: "#fff",
+                                        color: "#25d366",
                                         fontSize: "1.8rem",
                                         marginRight: "1rem",
                                     }}
                                 />
                                 <InstagramIcon
                                     sx={{
-                                        color: "#fff",
+                                        color: "#e1306c",
                                         fontSize: "1.8rem",
                                         marginRight: "1rem",
                                     }}
                                 />
                                 <YouTubeIcon
                                     sx={{
-                                        color: "#fff",
+                                        color: "#ff0000",
                                         fontSize: "1.8rem",
                                         marginRight: "1rem",
                                     }}
                                 />
                                 <TelegramIcon
                                     sx={{
-                                        color: "#fff",
+                                        color: "#0088cc",
                                         fontSize: "1.8rem",
                                         marginRight: "1rem",
                                     }}

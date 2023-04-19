@@ -1,14 +1,14 @@
 import { createTheme } from "@mui/material/styles";
 import { colors } from "@mui/material";
 
-export const themeMode = {
+export const themeModes = {
     dark: "dark",
     light: "light",
 };
 
 const themeConfigs = {
     custom: ({ mode }) => {
-        const customPalette = mode === themeMode.dark ? {
+        const customPalette = mode === themeModes.dark ? {
             primary: {
                 main: "#20232a",
                 contrastText: "#ffffff",
@@ -19,7 +19,7 @@ const themeConfigs = {
             },
             background: {
                 default: "#282c34",
-                paper: "#131313"
+                paper: "#20232a"
             }
         } : {
             primary: {
