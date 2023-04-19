@@ -55,7 +55,10 @@ const TopBar = () => {
 
     return (
         <>
-            <Sidebar />
+            <Sidebar
+                open={sidebarOpen}
+                toggleSidebar={toggleSidebar}
+            />
             <ScrollAppBar>
                 <AppBar
                     elevation={0}
@@ -143,6 +146,27 @@ const TopBar = () => {
                                 }
                             </Button>
                         </Box>
+
+                        <Stack
+                            spacing={3}
+                            direction="row"
+                            alignItems="center"
+                        >
+                            {!user &&
+                                <Button
+                                    sx={{
+                                        color: "#fff",
+                                        backgroundColor: "#25c2a0",
+                                        borderRadius: "15px",
+                                    }}
+                                    variant='contained'
+                                    onClick={() => dispatch(setAuthModalOpen(true))}
+                                >
+                                    Sign In
+                                </Button>
+                            }
+                        </Stack>
+                        {user && <UserMenu />}
                     </Toolbar>
                 </AppBar>
             </ScrollAppBar>
