@@ -33,7 +33,7 @@ const ScrollAppBar = ({ children, window }) => {
     return children && React.cloneElement(children, {
         sx: {
             color: trigger ? "text.primary" : themeMode === themeMode.dark ? "primary.contrastText" : "text.primary",
-            backgroundColor: trigger ? "background.paper" : themeMode === themeMode.dark ? "transparent" : "background.paper"
+            backgroundColor: trigger ? "background.paper" : themeMode === themeMode.dark ? "transparent" : "background.default",
         }
     });
 };
@@ -156,7 +156,7 @@ const TopBar = () => {
                                 <Button
                                     sx={{
                                         color: "#fff",
-                                        backgroundColor: "#25c2a0",
+                                        backgroundColor: "#61dafb",
                                         borderRadius: "15px",
                                     }}
                                     variant='contained'
