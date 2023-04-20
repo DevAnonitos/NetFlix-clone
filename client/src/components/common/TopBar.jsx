@@ -1,4 +1,4 @@
-import React, { useState, cloneElement  } from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import Logo from './Logo';
@@ -12,7 +12,6 @@ import {
     AppBar,
     Box,
     Button,
-    IconButton,
     Stack,
     Toolbar,
     useScrollTrigger

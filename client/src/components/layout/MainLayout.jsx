@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet } from "react-router-dom";
 import { Box } from "@mui/material";
-import { GlobalLoading, AuthModal, TopBar, Footer } from '../common';
+import { GlobalLoading, AuthModal, TopBar, Footer, UserMenu } from '../common';
 
 const MainLayout = () => {
     return (
@@ -22,6 +22,7 @@ const MainLayout = () => {
                 >
                     <Outlet />
                 </Box>
+                <UserMenu />
             </Box>
 
             {/*------------------- Footer--------------- */}
