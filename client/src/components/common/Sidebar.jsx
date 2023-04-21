@@ -125,36 +125,35 @@ const Sidebar = ({ open, toggleSidebar }) => {
                             />
                             </ListItemButton>
                         ))}
-                        <Typography
-                            variant="h6"
-                            marginBottom="20px"
-                            color="#25c2a0"
-                        >
-                            Theme
-                        </Typography>
-                        <ListItemButton onClick={onSwitchTheme}>
-                            <ListItemIcon>
-                                {themeMode ===
-                                    themeModes.dark && <DarkModeOutlinedIcon />
-                                }
-                                {themeMode ===
-                                    themeModes.light && <WbSunnyOutlinedIcon />
-                                }
-                            </ListItemIcon>
-                            <ListItemText
-                                disableTypography
-                                primary={
-                                    <Typography>
-                                        {themeMode ===
-                                            themeModes.dark
-                                            ? "dark mode" : "light mode"
-                                        }
-                                    </Typography>
-                                }
-                            />
-                        </ListItemButton>
                     </>
                 )}
+                <Typography
+                    variant="h6"
+                    marginBottom="20px"
+                    color="#25c2a0"
+                >
+                    Theme
+                </Typography>
+                <ListItemButton onClick={onSwitchTheme}>
+                    <ListItemIcon>
+                        {themeMode ===
+                            themeModes.dark && <DarkModeOutlinedIcon />
+                        }
+                        {themeMode ===
+                            themeModes.light && <WbSunnyOutlinedIcon />
+                        }
+                    </ListItemIcon>
+                    <ListItemText
+                        disableTypography
+                        primary={
+                            <Typography>
+                                {themeMode ===themeModes.dark
+                                    ? "dark mode" : "light mode"
+                                }
+                            </Typography>
+                        }
+                    />
+                </ListItemButton>
             </List>
         </>
     );
