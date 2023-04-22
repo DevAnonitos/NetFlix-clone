@@ -10,7 +10,7 @@ const privateClient = axios.create({
     },
 });
 
-privateClient.interceptors.request(async config => {
+const requestInterceptor = async config => {
     return {
         ...config,
         header: {
@@ -18,7 +18,9 @@ privateClient.interceptors.request(async config => {
             "Authorization": `Bearer ${localStorage.getItem("actkn")}`,
         }
     }
-});
+};
+
+privateClient.interceptors.request.use(requestInterceptor);
 
 privateClient.interceptors.response.use((response) => {
     if(response && response.data) return response.data;

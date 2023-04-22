@@ -10,14 +10,16 @@ const publicClient = axios.create({
     },
 });
 
-publicClient.interceptors.request(async config => {
+const requestInterceptor = async config => {
     return {
         ...config,
         header: {
             'Content-Type': 'application/json',
         }
     }
-});
+};
+
+publicClient.interceptors.request.use(requestInterceptor);
 
 publicClient.interceptors.response.use((response) => {
     if(response && response.data) return response.data;
