@@ -21,7 +21,7 @@ const SignupForm = ({ switchAuthState }) => {
     const [isLoginRequest, setIsLoginRequest] = useState(false);
     const [errorMessage, setErrorMessage] = useState();
 
-    const signForm = useFormik({
+    const signupForm = useFormik({
         initialValues: {
             password: "",
             username: "",
@@ -42,13 +42,64 @@ const SignupForm = ({ switchAuthState }) => {
                 .oneOf([Yup.ref("password")], "ConfirmPassword not match")
                 .min(8, "ConfirmPassword minimum 8 characters🥲")
                 .required("ConfirmPassword is required😀")
-        })
+        }),
+        onSubmit: async values => {
+            setErrorMessage(undefined);
+            setIsLoginRequest(true);
+            const { response, err } = await userApi.signup(values);
+            setIsLoginRequest(false);
+
+            if(response) {
+                signupForm.resetForm();
+                dispatch(setUser(response));
+                dispatch(setAuthModalOpen(false));
+                toast.success("Sign up success");
+            }
+
+
+            if(err) {
+                setErrorMessage(err.message);
+                toast.error("Something went wrong!")
+            }
+        }
     })
 
     return (
         <>
-            <Box>
-
+            <Box
+                component="form"
+                onSubmit={signupForm.handleSubmit}
+            >
+                <Stack spacing={3}>
+                    <TextField
+                        type="text"
+                        placeholder='Username'
+                        name='username'
+                        fullWidth
+                        value={signupForm.values.username}
+                        onChange={signupForm.handleChange}
+                        error={signupForm.touched.username
+                            && signupForm.errors.username !== undefined
+                        }
+                        helperText={signupForm.touched.username
+                            && signupForm.errors.username
+                        }
+                    />
+                    <TextField
+                        type="text"
+                        placeholder='Displayname'
+                        name='displayname'
+                        fullWidth
+                        value={signupForm.values.displayName}
+                        onChange={signupForm.handleChange}
+                        error={signupForm.touched.displayName
+                            && signupForm.errors.displayName !== undefined
+                        }
+                        helperText={signupForm.touched.displayName
+                            && signupForm.errors.displayName
+                        }
+                    />
+                </Stack>
             </Box>
         </>
     );

@@ -117,8 +117,7 @@ const TopBar = () => {
                                             : "inherit",
                                         mr: 2,
                                         backgroundColor: appState.includes(item.state)
-                                            ? "secondary.main"
-                                            : "inherit",
+                                            ? "primary.main" : "unset",
                                     }}
                                     component={Link}
                                     to={item.path}
