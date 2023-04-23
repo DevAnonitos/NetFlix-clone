@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import Container from './Container';
 import Logo from './Logo';
@@ -14,6 +14,14 @@ import TelegramIcon from '@mui/icons-material/Telegram';
 
 
 const Footer = () => {
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+        const visits = parseInt(localStorage.getItem('visits')) || 0;
+        localStorage.setItem('visits', visits + 1);
+        setCount(visits + 1);
+    }, []);
+
     return (
         <>
             <Container>
@@ -56,6 +64,9 @@ const Footer = () => {
                             </Typography>
                             <Typography variant="body2" color="text.secondary">
                                 Copyright © 2023 All rights reserved
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                                User😺accessed: {count} times.
                             </Typography>
                             <Box
                                 sx={{

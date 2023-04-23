@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Outlet } from "react-router-dom";
 import { Box } from "@mui/material";
 import { GlobalLoading, AuthModal, TopBar, Footer, UserMenu } from '../common';
 
+
 const MainLayout = () => {
+
     return (
         <>
             {/*--------- GlobalLoading------------ */}
