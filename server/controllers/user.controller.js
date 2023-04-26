@@ -51,9 +51,9 @@ const signIn  = async (req, res) => {
         if(!user.validPassword(password))
             return responseHandler.badRequest(res, "Wrong Password");
 
-        const token = jsonwebtoken.sign(
+        const token = jsonwebToken.sign(
             { data: user.id },
-            process.env.TOKEN_SECRET,
+            process.env.JWT_SECRET_KEY, // update secret key
             { expiresIn: "24h" },
         );
 
@@ -70,6 +70,7 @@ const signIn  = async (req, res) => {
         console.log(error);
     }
 };
+
 // Update PassWord Controller
 const updatePassword = async (req, res) => {
     try {
