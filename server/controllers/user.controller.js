@@ -8,7 +8,7 @@ const signUp = async (req, res) => {
         const { username, password, displayName } = req.body;
 
         const checkUser = await userModel.findOne({
-            username
+            username,
         });
 
         if(checkUser) return responseHandler.badRequest(res, "Username has been already used!");

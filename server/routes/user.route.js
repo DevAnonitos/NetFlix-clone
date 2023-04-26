@@ -31,6 +31,8 @@ router.post(
 
             return true;
         }),
+    requestHandler.validate,
+    userController.signUp,
 );
 
 router.post(
