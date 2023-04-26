@@ -19,7 +19,6 @@ const userApi = {
 
             return { response };
         } catch (error) {
-            console.log(error);
             return error;
         }
     },
@@ -32,7 +31,6 @@ const userApi = {
 
             return { response };
         } catch (error) {
-            console.log(error);
             return error;
         }
     },
@@ -42,7 +40,6 @@ const userApi = {
 
             return { response };
         } catch (error) {
-            console.log(error);
             return error;
         }
     },
@@ -55,7 +52,6 @@ const userApi = {
 
             return { response };
         } catch (error) {
-            console.log(error);
             return error;
         }
     }
