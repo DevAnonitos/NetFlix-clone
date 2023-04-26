@@ -23,7 +23,7 @@ const MainLayout = () => {
         };
 
         authUser();
-    },[dispatch])
+    },[dispatch]);
 
     return (
         <>

@@ -15,7 +15,7 @@ const requestInterceptor = async config => {
         ...config,
         header: {
             'Content-Type': 'application/json',
-        }
+        },
     }
 };
 
