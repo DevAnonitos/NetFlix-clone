@@ -14,6 +14,13 @@ import {
     Stack,
     TextField
 } from "@mui/material";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+    typography: {
+        fontSize: 16,
+    },
+});
 
 const SignupForm = ({ switchAuthState }) => {
 
@@ -88,7 +95,7 @@ const SignupForm = ({ switchAuthState }) => {
                     <TextField
                         type="text"
                         placeholder='Displayname'
-                        name='displayname'
+                        name='displayName'
                         fullWidth
                         value={signupForm.values.displayName}
                         onChange={signupForm.handleChange}
@@ -99,7 +106,78 @@ const SignupForm = ({ switchAuthState }) => {
                             && signupForm.errors.displayName
                         }
                     />
+                    <TextField
+                        type="password"
+                        placeholder='Password'
+                        name='password'
+                        fullWidth
+                        value={signupForm.values.password}
+                        onChange={signupForm.handleChange}
+                        error={signupForm.touched.password
+                            && signupForm.errors.password !== undefined
+                        }
+                        helperText={signupForm.touched.password
+                            && signupForm.errors.password
+                        }
+                    />
+                    <TextField
+                        type="password"
+                        placeholder='ConfirmPassword'
+                        name='confirmPassword'
+                        fullWidth
+                        value={signupForm.values.confirmPassword}
+                        onChange={signupForm.handleChange}
+                        error={signupForm.touched.confirmPassword
+                            && signupForm.errors.confirmPassword !== undefined
+                        }
+                        helperText={signupForm.touched.confirmPassword
+                            && signupForm.errors.confirmPassword
+                        }
+                    />
                 </Stack>
+                <ThemeProvider
+                    theme={theme}
+                >
+                    <LoadingButton
+                        type="submit"
+                        fullWidth
+                        size="large"
+                        variant="contained"
+                        sx={{
+                            marginTop: 4,
+                            backgroundColor: "#25c2a0",
+                            ":hover": {
+                                backgroundColor: "#24d2a9",
+                            },
+                        }}
+                        loading={isLoginRequest}
+                    >
+                        Sign up
+                    </LoadingButton>
+                </ThemeProvider>
+
+
+                <Button
+                    fullWidth
+                    sx={{
+                        marginTop: 1,
+                        color: "#25c2a0"
+                    }}
+                    onClick={() => switchAuthState()}
+                >
+                    sign in
+                </Button>
+
+                {errorMessage && (
+                    <Box sx={{ marginTop: 2 }}>
+                        <Alert
+                            severity="error"
+                            variant="outlined"
+                        >
+                            {errorMessage}
+                        </Alert>
+                    </Box>
+                )}
             </Box>
         </>
     );
