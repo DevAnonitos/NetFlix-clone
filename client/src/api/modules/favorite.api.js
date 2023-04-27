@@ -11,8 +11,16 @@ const favoriteApi = {
     getList: async () => {
         try {
             const response = await publicClient.get(favoriteEndpoints.list);
-
-            return { response };
+            const headers = {
+                'content-type': response.headers['content-type'],
+                'content-length': response.headers['content-length'],
+            };
+            const data = response.data;
+            const serializableResponse = {
+                headers,
+                data,
+            };
+            return { response: serializableResponse };
         } catch (error) {
             console.log(error);
             return error;
