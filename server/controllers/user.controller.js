@@ -11,7 +11,7 @@ const signUp = async (req, res) => {
             username,
         });
 
-        if(checkUser) return responseHandler.badRequest(res, "Username has been already used!");
+        if(checkUser) return responseHandler.badrequest(res, "Username has been already used!");
 
         const user = new userModel();
 
@@ -49,7 +49,7 @@ const signIn  = async (req, res) => {
             return responseHandler(res, "User not found!");
 
         if(!user.validPassword(password))
-            return responseHandler.badRequest(res, "Wrong Password");
+            return responseHandler.badrequest(res, "Wrong Password");
 
         const token = jsonwebToken.sign(
             { data: user.id },
@@ -82,7 +82,7 @@ const updatePassword = async (req, res) => {
             return responseHandler.unauthorize(res);
 
         if(!user.validPassword(password))
-            return responseHandler.badRequest(res, "Wrong Password");
+            return responseHandler.badrequest(res, "Wrong Password");
 
         user.setPassword(newPassword);
 
@@ -100,7 +100,7 @@ const getInfo = async (req, res) => {
     try {
         const user = await userModel.findById(req.user.id);
 
-        if(!user) return responseHandler.notFound(res);
+        if(!user) return responseHandler.notfound(res);
 
         responseHandler.ok(res, user);
 

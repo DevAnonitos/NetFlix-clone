@@ -32,7 +32,7 @@ const remove = async (req, res) => {
             user: req.user.id,
         });
 
-        if(!review) return responseHandler.notFound(res);
+        if(!review) return responseHandler.notfound(res);
 
         await review.remove();
 
