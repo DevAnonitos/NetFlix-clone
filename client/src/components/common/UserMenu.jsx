@@ -27,8 +27,14 @@ const UserMenu = () => {
                     <Typography
                         variant='h6'
                         sx={{
-                            cursor: "poiter",
+                            cursor: "pointer",
                             userSelect: "none",
+                            border: 2,
+                            paddingX: 2,
+                            paddingY: 1,
+                            borderRadius: 2,
+                            fontWeight: "bold",
+
                         }}
                         onClick={toggleMenu}
                     >
@@ -41,6 +47,7 @@ const UserMenu = () => {
                         PaperProps={{
                             sx: {
                                 padding: 0,
+                                borderRadius: 3,
                             }
                         }}
                     >
@@ -82,7 +89,7 @@ const UserMenu = () => {
                                     <Typography
                                         textTransform="uppercase"
                                     >
-                                        sign out
+                                        Sign out
                                     </Typography>
                             } />
                         </ListItemButton>

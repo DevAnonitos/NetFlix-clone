@@ -43,7 +43,6 @@ const MainLayout = () => {
                 >
                     <Outlet />
                 </Box>
-                <UserMenu />
             </Box>
 
             {/*------------------- Footer--------------- */}
