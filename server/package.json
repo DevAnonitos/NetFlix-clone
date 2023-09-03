@@ -17,7 +17,7 @@
     "express-rate-limit": "^6.7.0",
     "express-validator": "^6.15.0",
     "jsonwebtoken": "^9.0.0",
-    "mongoose": "^7.3.3",
+    "mongoose": "^7.5.0",
     "nodemon": "^2.0.21"
   }
 }
